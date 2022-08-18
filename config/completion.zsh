@@ -2,8 +2,8 @@
 autoload -U compinit
 compinit
 _comp_options+=(globdots)
-
+#zstyle
 zstyle ':completion:*' menu select
-zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
+zstyle ':completion:*:*:*:*:descriptions' format '%F{yellow}%B--%d--%b%f '
 zstyle ':completion:*' file-list all
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS} 
+zstyle ':completion:*' group-name ''
