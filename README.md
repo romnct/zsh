@@ -1,16 +1,14 @@
 # My ZSH
 
-Existen distintos frameworks que te ayudan a configurar _zsh_, pero aquí vamos hacerlo sin usar ninguno de estos. No es ni mejor ni peor usar (o no) los frameworks, pero a mí me gusta saber en todo momento por donde voy caminando, es decir, me gusta saber que estoy usando, las funciones de las que dispongo y como desarrollar o integrar nuevas.
+Existen distintos frameworks que te ayudan a configurar _zsh_, pero aquí vamos hacerlo sin usar ninguno de estos. No es ni mejor ni peor usar los frameworks, pero a mí me gusta saber en todo momento por donde voy caminando; me gusta saber que estoy usando, las funciones de las que dispongo y como desarrollar o integrar nuevas.
 
 ## Instalación de _zsh_
 
-Para Ubuntu en mi caso. Dependerá del sistema operativo que tenga usted.
+En mi caso tengo instalado Ubuntu 22.04.1
 
 ```
 sudo apt install zsh
 ```
-
-Fácil, ¿verdad?
 
 Y la definimos como la _shell_ por defecto del usuario.
 
@@ -73,7 +71,7 @@ Vamos a detallar que estamos haciendo. Comenzaremos hablando de los archivos (o 
 
 ### ¿Por qué esta disposición?
 
-Me resulta más cómodo separar cada cosa por su forma de ser, por ejemplo, el archivo `config/history` solo abarca todo lo relacionado con el historial de la _zsh_. Entonces, si continuamos detallando veremos que existen más archivos como `config/history`con una única función.
+Me resulta más cómodo separar cada cosa por su forma de ser, por ejemplo, en el archivo `config/history` solo incluirá opciones o funcionalidades relacionadas con el historial de la _zsh_. 
 
 | Archivo | Descripción |
 | --- | --- |
@@ -97,7 +95,7 @@ A continuación, vamos a detallar que es cada línea del archivo.
 autoload -U compinit
 ```
 
-`autoload` carga la función `compinit` _**(zsh completion)**_ en la sesión en la cual estemos trabajando de la _shell_. La opción `-U` evita que se expandan alias si existiese alguno que se denominara igual que la función `compinit`. Nunca en la práctica.
+`autoload` carga la función `compinit` _**(zsh completion)**_ en la sesión actual de la _shell_. La opción `-U` evita que se expandan el alias si existiese alguno que se denominara igual que la función `compinit`. Nunca en la práctica.
 
 ```
 compinit
@@ -124,7 +122,7 @@ Muestra un menu donde muestra las posibles opciones de completado en lugar de ir
 zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
 ```
 
-Muestra una descripción de las opciones de completado. En **amarillo en la anterior imagen**.
+Muestra una descripción de los elementos. En **amarillo en la anterior imagen**.
 
 -   `%F{<color>} %f` - Cambia el color del texto`<color>`.
 -   `%K{<color>} %k` - Cambia el color de fondo `<color>`.
