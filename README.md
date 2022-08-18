@@ -1,6 +1,6 @@
 # My ZSH
 
-Existen distintos frameworks que te ayudan a configurar _zsh_, pero aquí vamos hacerlo sin usar ninguno de estos. No es ni mejor ni peor usar (o no) los frameworks, pero a mí me gusta saber en todo momento por donde voy caminando, es decir, me gusta saber que estoy usando, las funciones de las que dispongo y como desarrollar o integrar nuevas. Por ello que cocine yo hoy la configuración de _zsh_. 
+Existen distintos frameworks que te ayudan a configurar _zsh_, pero aquí vamos hacerlo sin usar ninguno de estos. No es ni mejor ni peor usar (o no) los frameworks, pero a mí me gusta saber en todo momento por donde voy caminando, es decir, me gusta saber que estoy usando, las funciones de las que dispongo y como desarrollar o integrar nuevas. 
 
 ## Instalación de _zsh_
 
