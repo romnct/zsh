@@ -1,6 +1,6 @@
 # My ZSH
 
-Existen distintos frameworks que te ayudan a configurar _zsh_, pero aquí vamos hacerlo sin usar ninguno de estos. No es ni mejor ni peor usar (o no) los frameworks, pero a mí me gusta saber en todo momento por donde voy caminando, es decir, me gusta saber que estoy usando, las funciones de las que dispongo y como desarrollar o integrar nuevas. 
+Existen distintos frameworks que te ayudan a configurar _zsh_, pero aquí vamos hacerlo sin usar ninguno de estos. No es ni mejor ni peor usar (o no) los frameworks, pero a mí me gusta saber en todo momento por donde voy caminando, es decir, me gusta saber que estoy usando, las funciones de las que dispongo y como desarrollar o integrar nuevas.
 
 ## Instalación de _zsh_
 
@@ -24,19 +24,13 @@ chsh -s $(which zsh)
 Clonamos el repositorio en la ubicación `$HOME/.config`.
 
 ```
-git clone https://github.com/romnct/zsh.git $HOME/.config 
+git clone https://github.com/romnct/zsh.git $HOME/.config/zsh 
 ```
 
 Y movemos el archivo `.zprofile` a `$HOME`.
 
 ```
 mv $HOME/.config/zsh/.zprofile $HOME
-```
-
-Y creamos los directorios donde irán los plugins y los temas de la _zsh_.
-
-```
-mkdir $HOME/.config/zsh/themes $HOME/.config/zsh/plugins/src
 ```
 
 ### Descargar los plugins y el tema
@@ -55,15 +49,15 @@ Una vez todo colocado en su sitio (o en el que queráis si sabéis lo que estái
 ### Instalación
 
 ```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.config/zsh/plugins/src
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.config/zsh/plugins/src/zsh-syntax-highlighting
 ```
 
 ```
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/plugins/src
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/plugins/src/zsh-autosuggestions
 ```
 
 ```
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/plugins/themes
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/plugins/themes/powerlevel10k.git
 ```
 
 ## Acerca de la configuración
