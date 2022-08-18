@@ -1,14 +1,14 @@
 # zsh history:
-source ~/.config/zsh/config/history
+source ~/.config/zsh/config/history.zsh
 
 # zsh completion:
-source ~/.config/zsh/config/completion
+source ~/.config/zsh/config/completion.zsh
 
 # zsh aliases
-source ~/.config/zsh/config/aliases
+source ~/.config/zsh/config/aliases.zsh
 
 # zsh Plugins
-source ~/.config/zsh/plugins/plugins
+source ~/.config/zsh/plugins/plugins.zsh
 
 # Themes
 ## powerlevel10k
