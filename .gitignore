@@ -1,0 +1,4 @@
+.zcompdump
+plugins/zsh-autosuggestions/
+plugins/zsh-syntax-highlighting/
+powerlevel10k/
