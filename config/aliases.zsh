@@ -1,5 +1,6 @@
 # Commom
 alias ls='ls --color=auto'
+alias cat='bat --paging never'
 
 # Git
 alias gs='git status'
