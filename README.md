@@ -1,58 +1,52 @@
 # My ZSH
 
-Existen distintos frameworks que te ayudan a configurar _zsh_, pero aquí vamos hacerlo sin usar ninguno de estos. No es ni mejor ni peor usar los frameworks, pero a mí me gusta saber en todo momento por donde voy caminando; me gusta saber que estoy usando, las funciones de las que dispongo y como desarrollar o integrar nuevas.
+Existen distintos frameworks que te ayudan a configurar _zsh_, pero aquí vamos hacerlo sin usar ninguno de estos. No es ni mejor ni peor usar los frameworks, pero a mí me gusta saber en todo momento que estoy usando, las funciones de las que dispongo y como desarrollar nuevas.
 
-## Instalación de _zsh_
+## Primeros pasos configurando _zsh_
 
-En mi caso tengo instalado Ubuntu 22.04.1
-
-```
-sudo apt install zsh
-```
-
-Y la definimos como la _shell_ por defecto del usuario.
+Tenemos que definir, si queremos, que la _shell_ por defecto del usuario sea la ***zsh***.
 
 ```
 chsh -s $(which zsh)
 ```
 
-
-## Primeros pasos configurando _zsh_
-
-Clonamos el repositorio en la ubicación `$HOME/.config`.
+Después, definimos el directorio de configuración del usuario. En el archivo `/etc/zsh/zshenv` añadimos las siguiente variables:
 
 ```
-git clone https://github.com/romnct/zsh.git $HOME/.config/zsh 
+export ZDOTDIR="$HOME/.config/zsh"
 ```
 
-Y movemos el archivo `.zprofile` a `$HOME`.
+Clonamos el repositorio en la ubicación `$HOME/.config/zsh`.
 
 ```
-mv $HOME/.config/zsh/.zprofile $HOME
+git clone https://github.com/romnct/zsh.git $HOME/.config/zsh
 ```
 
-### Descargar los plugins y el tema
+Aquí se encontraran los archivos de configuración `.zshenv`, `.zprofile`, `.zshrc`.
+
+**`.zshenv`:** Contiene aquellas variables definidas por el usuario que son necesarias para otros programas. Por ejemplo, `$PATH` o `$EDITOR`.
+
+~~**`.zprofile`:** Se carga cuando el usuario inicia sesión en la shell. Contiene la configuración general de la ***zsh***, como el historial por ejemplo.~~
+
+**`.zshrc`:** Carga cada vez que iniciamos una nueva *shell*. Aquí irá la configuración sensible a no ser persistente, es decir, aquella que necesite ser cargada cada vez que inicie la *shell*.
+
+## Plugins y temas
 
 Una vez todo colocado en su sitio (o en el que queráis si sabéis lo que estáis haciendo) vamos a descargar los plugins y el tema.
 
-#### Plugins
-
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-
-#### Tema
-
-- [powerlevel10k](https://github.com/romkatv/powerlevel10k)
-
-### Instalación
+[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.config/zsh/plugins/src/zsh-syntax-highlighting
 ```
 
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.config/zsh/plugins/src/zsh-autosuggestions
 ```
+
+[powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.config/zsh/themes/powerlevel10k
@@ -64,22 +58,23 @@ Vamos a detallar que estamos haciendo. Comenzaremos hablando de los archivos (o 
 
 | Directorio/Archivo | Descripción |
 | --- | --- |
-| **_/config_** 	| Directorio donde se alojarán los archivos de configuración de zsh |
-| **_/plugins_** 	| Directorio donde se alojarán los plugins de zsh |
-| **_./.zprofile_** | Archivo que es leído una vez cuando iniciamos sesión en la shell |
-| **_./.zshrc_** 		| Archivo que es leído cada vez que abrimos una shell	|
+| **_/config_** | Directorio donde se alojarán los archivos de configuración de zsh |
+| **_/plugins_** | Directorio donde se alojarán los plugins de zsh |
+| ~~**_./.zprofile_**~~ | ~~Archivo que es leído una vez cuando iniciamos sesión en la shell~~ |
+| **_./.zshenv_** | Archivo que es leído cada vez que abrimos una shell que contiene las variables de entorno |
+| **_./.zshrc_** | Archivo que es leído cada vez que abrimos una shell |
 
 ### ¿Por qué esta disposición?
 
-Me resulta más cómodo separar cada cosa por su forma de ser, por ejemplo, en el archivo `config/history` solo incluirá opciones o funcionalidades relacionadas con el historial de la _zsh_. 
+Me resulta más cómodo separar cada cosa por su forma de ser, por ejemplo, en el archivo `config/history` solo incluirá opciones o funcionalidades relacionadas con el historial de la _zsh_.
 
 | Archivo | Descripción |
 | --- | --- |
-| **_./config/.p10k.zsh_** 	| Configuración de la [powerlevel10k](https://github.com/romkatv/powerlevel10k) |
-| **_./config/aliases.zsh_** 	| Alias declarados para la _zsh_ |
+| **_./config/p10k.zsh_** | Configuración de la [powerlevel10k](https://github.com/romkatv/powerlevel10k) |
+| **_./config/aliases.zsh_** | Alias declarados para la _zsh_ |
 | **_./config/completion.zsh_** | Funciones y configuración de _completions_ de _zsh_ |
-| **_./config/history.zsh_** 		| Configuración del historial de la _zsh_	|
-| **_./plugins/plugins.zsh_** 		| Definición de los plugins que integraremos en la _zsh_	|
+| **_./config/history.zsh_** | Configuración del historial de la _zsh_ |
+| **_./plugins/plugins.zsh_** | Definición de los plugins que integraremos en la _zsh_ |
 
 ### Hablemos de lo que es importante
 
