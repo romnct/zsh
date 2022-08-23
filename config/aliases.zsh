@@ -1,5 +1,5 @@
 # Commom
-alias ls='ls --color=auto'
+alias ls='ls --color=auto --group-directories-first'
 alias cat='bat --paging never'
 
 # Git
